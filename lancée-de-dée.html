@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanceur de Dé</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: #ffdd44;
+            margin: 0;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            height: 24px;
+            margin-right: 20px;
+            justify-content: space-between;
+        }
+        .menu-icon div {
+            background-color: #ffdd44;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+            color: #ffdd44;
+    }
+        .nav-links.active {
+            transform: translateX(0);
+        }
+        .content {
+            margin-top: 80px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+        .dice-select {
+            margin: 20px 0;
+        }
+        .result {
+            font-size: 2em;
+            margin: 20px;
+            color: #ffdd44;
+            animation: roll 0.3s ease-in-out;
+        }
+        .history {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .history-item {
+            color: #f5f5f5;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        @keyframes roll {
+            0% { transform: rotate(0); }
+            50% { transform: rotate(360deg); }
+            100% { transform: rotate(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Menu</h1>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="nav-links" id="navLinks">
+    <a href="darren.html">fiche de lukas</a>
+    <a href="gayten.html">fiche de gaiten</a>
+    <a href="#" onclick="clearHistory()">🗑️ Supprimer l'historique</a>
+    <a href="page-de-resherche.html">recherche</a>
+    <a href="map.html">carte interactive</a>
+    <a href="note.html">mes note</a>
+    <a href="page-inventaire.html">inventaire</a>
+</div>
+
+<div class="content">
+    <h2>Lanceur de Dé</h2>
+    <div class="dice-select">
+        <select id="diceType">
+            <option value="6">1D6</option>
+            <option value="20">1D20</option>
+            <option value="100">1D100</option>
+        </select>
+        <button onclick="rollDice()">Lancer le dé</button>
+    </div>
+    <div id="result" class="result">🎲</div>
+    <h3>Historique des Lancers</h3>
+    <div class="history" id="history"></div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    function rollDice() {
+        const diceType = parseInt(document.getElementById('diceType').value);
+        const result = Math.floor(Math.random() * diceType) + 1;
+        document.getElementById('result').textContent = `🎲 ${result}`;
+        addToHistory(diceType, result);
+    }
+
+    function addToHistory(diceType, result) {
+        const date = new Date();
+        const dateTime = `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
+        const history = JSON.parse(localStorage.getItem('diceHistory')) || [];
+        history.push(`1D${diceType}: <span style="color: #ffdd44;">${result}</span> - ${dateTime}`);
+        localStorage.setItem('diceHistory', JSON.stringify(history));
+        displayHistory();
+    }
+
+    function displayHistory() {
+        const history = JSON.parse(localStorage.getItem('diceHistory')) || [];
+        const historyContainer = document.getElementById('history');
+        historyContainer.innerHTML = '';
+        history.forEach(item => {
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            historyItem.innerHTML = item;
+            historyContainer.appendChild(historyItem);
+        });
+    }
+
+    function clearHistory() {
+        if (confirm("Êtes-vous sûr de vouloir supprimer l'historique des lancers ?")) {
+            localStorage.removeItem('diceHistory');
+            displayHistory();
+        }
+    }
+
+    window.onload = displayHistory;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: #ffdd44;
+            margin: 0;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            height: 24px;
+            margin-right: 25px;
+            justify-content: space-between;
+        }
+        .menu-icon div {
+            background-color: #ffdd44;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+            color: #ffdd44;
+        }
+        .nav-links.active {
+            transform: translateX(0);
+        }
+        .content {
+            margin-top: 80px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .note-form input,
+        .note-form textarea {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            font-size: 1em;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+        }
+        .note-form button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .note-item {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .note-item div {
+            max-width: 70%;
+        }
+        .note-item button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Notes</h1>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="nav-links" id="navLinks">
+    <a href="darren.html">fiche de lukas</a>
+    <a href="gayten.html">fiche de gaiten</a>
+    <a href="lancée-de-dée.html">les dée du destin</a>
+    <a href="page-de-resherche.html">recherche</a>
+    <a href="map.html">carte interactive</a>
+    <a href="page-inventaire.html">inventaire</a>
+</div>
+
+<div class="content">
+    <form class="note-form" onsubmit="addNote(); return false;">
+        <input type="text" id="noteName" placeholder="Nom de la note" required />
+        <textarea id="noteContent" placeholder="Contenu de la note" rows="4" required></textarea>
+        <button type="submit">Ajouter la note</button>
+    </form>
+    <div id="noteContainer"></div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+    function saveNotes() {
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    function addNote() {
+        const name = document.getElementById('noteName').value;
+        const content = document.getElementById('noteContent').value;
+        notes.push({ name, content });
+        saveNotes();
+        displayNotes();
+        document.getElementById('noteName').value = '';
+        document.getElementById('noteContent').value = '';
+    }
+
+    function editNote(index) {
+        const newName = prompt("Modifier le nom de la note", notes[index].name);
+        const newContent = prompt("Modifier le contenu de la note", notes[index].content);
+        if (newName !== null && newContent !== null) {
+            notes[index] = { name: newName, content: newContent };
+            saveNotes();
+            displayNotes();
+        }
+    }
+
+    function deleteNote(index) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer cette note ?")) {
+            notes.splice(index, 1);
+            saveNotes();
+            displayNotes();
+        }
+    }
+
+    function displayNotes() {
+        const noteContainer = document.getElementById('noteContainer');
+        noteContainer.innerHTML = '';
+        notes.forEach((note, index) => {
+            const noteItem = document.createElement('div');
+            noteItem.className = 'note-item';
+            noteItem.innerHTML = `
+                <div>
+                    <strong>${note.name}</strong>
+                    <p>${note.content}</p>
+                </div>
+                <div>
+                    <button onclick="editNote(${index})">✏️</button>
+                    <button onclick="deleteNote(${index})">🗑️</button>
+                </div>
+            `;
+            noteContainer.appendChild(noteItem);
+        });
+    }
+
+    window.onload = displayNotes;
+</script>
+
+</body>
+</html>

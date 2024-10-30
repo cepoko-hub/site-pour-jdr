@@ -1,0 +1,285 @@
+[
+    {
+        "name": "l'église de la sainte radiance",
+        "image": "asset/img/image1.png",
+        "title": "église de la sainte radiance",
+        "description": "L’Église de la sainte radiance prêche la bonté et la compassion, honorant le repos des morts et rejetant fermement la nécromancie et les arts obscurs. Ses adeptes, majoritairement des soigneurs dévoués, aspirent à éradiquer maladie et famine, apportant guérison et espoir aux plus démunis."
+    },
+    {
+        "name": "nécromencie",
+        "image": "asset/img/image2.png",
+        "title": "la nécromentcie",
+        "description": "La nécromancie, sombre art permettant de manipuler les âmes et de relever les morts, est strictement interdite sur le continent d'Eldoria. Considérée comme une perversion du cycle de la vie et de la mort, sa pratique est chassée par la plupart des sociétés et vouée au mépris des habitants."
+    },
+    {
+        "name": "eldora",
+        "image": "asset/img/image3.png",
+        "title": "eldora",
+        "description": "Eldoria est un vaste continent bordé par des mers agitées, où la plupart des nations vivent en harmonie, unies par la foi en la Sainte Radiance. Toutefois, deux puissances sont engagées dans une guerre froide, un conflit feutré qui déstabilise parfois l’équilibre de la région. Malgré ces tensions, Eldoria demeure un lieu de commerce et de culture, où les idéaux de compassion et de bonté tentent de l'emporter sur les discordes."
+    },
+    {
+        "name": "la guerre froide",
+        "image": "asset/img/image4.png",
+        "title": "la guerre froide",
+        "description": "Les royaumes de Valmoria et d’Ortharis sont les deux puissances en guerre froide sur Eldoria. Valmoria, un royaume de vallées fertiles et de grandes cités, prône l’unité par la foi en la Sainte Radiance, rêvant d’une Eldoria unifiée sous ses valeurs. Ortharis, quant à lui, est un pays montagneux et mystérieux, imprégné de traditions ancestrales, où les mages et les alchimistes exercent une influence profonde, souvent en désaccord avec les dogmes de Valmoria. La querelle entre Valmoria et Ortharis trouve ses racines dans un artefact ancien, le 'Cœur de la Tempérance', un cristal aux pouvoirs curatifs sans égal, que les deux royaumes revendiquent comme leur héritage. Ce conflit non déclaré les oppose depuis des décennies, les poussant à des manœuvres d’intrigue, d’espionnage et d’alliances subtiles, tout en maintenant une paix de façade."
+    },
+    {
+        "name": "le coeur de la tempérence",
+        "image": "asset/img/image5.png",
+        "title": "le coeur de la tempérence",
+        "description": "Le Cœur de la Tempérance est un cristal légendaire, réputé pour ses pouvoirs de guérison extraordinaires et son aura de sérénité apaisante. On raconte qu'il aurait été forgé par un ancien mage-sacré, désireux de créer un artefact capable de purifier les maladies et d’apporter la paix intérieure à ceux qui s’en approchent. Ce cristal est vénéré à la fois par les adeptes de la Sainte Radiance pour ses vertus de guérison et par les mages d’Ortharis, qui voient en lui un artefact essentiel à la préservation de leur savoir. Cependant, le Cœur de la Tempérance est également une source de discorde, car chaque royaume affirme qu'il lui revient de droit. Bien que sa localisation exacte soit aujourd’hui inconnue, des rumeurs circulent sur son retour, attisant les tensions entre Valmoria et Ortharis."
+    },
+    {
+        "name": "valmoria",
+        "image": "asset/img/image6.png",
+        "title": "valmoria",
+        "description": "Valmoria est un royaume prospère, situé dans les plaines verdoyantes d'Eldoria, où s’étendent de riches terres agricoles et de vastes cités blanches baignées de lumière. Fidèle à la Sainte Radiance, Valmoria incarne les idéaux de compassion, de justice et de solidarité. Son peuple, profondément religieux, voit dans la foi un chemin vers la paix et l’unité, et les prêtres de l’Église de la Sainte Radiance jouent un rôle influent dans la société, souvent au côté du roi. Les Valmoriens sont connus pour leur architecture élégante et leurs guérisseurs renommés, qui voyagent souvent à travers Eldoria pour offrir leur aide. Cependant, cette quête d’unité religieuse les amène parfois à entrer en conflit avec les cultures qui ne partagent pas leur vision. Leur rivalité avec Ortharis, perçue comme un bastion d’hérésie et de sorcellerie, alimente leur désir de retrouver le Cœur de la Tempérance, qu’ils considèrent comme un symbole de leur destinée divine."
+    },
+    {
+        "name": "ortharis",
+        "image": "asset/img/image7.png",
+        "title": "ortharis",
+        "description": "Ortharis est un royaume mystérieux et sauvage, niché dans les montagnes escarpées et les forêts denses du nord d’Eldoria. Sa population, méfiante des étrangers, est fière de ses traditions séculaires et de son indépendance farouche vis-à-vis de la Sainte Radiance, préférant se tourner vers des pratiques ancestrales de magie et d’alchimie. Ortharis est dirigé par un conseil de mages et de sages, appelés les 'Gardiens du Savoir', qui veillent sur des connaissances ésotériques jalousement protégées et transmises de génération en génération.Les Orthariens voient la magie comme un art sacré lié aux forces naturelles, en opposition aux dogmes rigides de Valmoria. Pour eux, le Cœur de la Tempérance représente une part de leur héritage magique et symbolise l'équilibre entre les forces de la vie et de la mort. Bien qu’aucun conflit ouvert ne les oppose directement à Valmoria, Ortharis s’arme discrètement et renforce ses défenses, prêt à protéger ses secrets contre toute intrusion."
+    },
+    {
+        "name": "gardien du savoir",
+        "image": "asset/img/image8.png",
+        "title": "gardien du savoir",
+        "description": "Les Gardiens du Savoir d'Ortharis sont un conseil restreint de mages et de sages, choisis pour leur maîtrise exceptionnelle de la magie et leur compréhension profonde des anciens secrets d'Eldoria. Héritiers d'une tradition millénaire, ils veillent sur les connaissances ésotériques du royaume, notamment les arcanes de l'alchimie, de la divination, et des sorts de protection, transmettant leurs savoirs uniquement aux initiés dignes de confiance. Ceux qui rejoignent les Gardiens prêtent un serment sacré de protéger les archives mystiques et de servir le royaume en maintenant un équilibre subtil entre magie et nature. Bien que souvent perçus avec suspicion par les autres nations, notamment par Valmoria, les Gardiens du Savoir se considèrent comme les protecteurs du savoir véritable et de l'identité d'Ortharis. Ils voient dans le Cœur de la Tempérance une clé essentielle pour perpétuer leur héritage et assurer l’avenir magique de leur royaume."
+    },
+    {
+        "name": "les élément magique",
+        "image": "asset/img/image9.png",
+        "title": "les élément magique",
+        "description": "La magie d'Eldoria repose sur la maîtrise des six éléments fondamentaux : feu, terre, eau, vent, lumière et ténèbres. Chaque mage possède une affinité naturelle avec un ou deux éléments, influençant ses sorts et sa puissance. Les éléments sont perçus comme des forces vivantes, et les incantations nécessitent une harmonisation avec leur énergie, requérant des années de discipline et de méditation. Ceux qui parviennent à équilibrer les éléments opposés, comme lumière et ténèbres, sont rares et souvent redoutés pour leur pouvoir exceptionnel."
+    },
+    {
+        "name": "l'assasins sans noms",
+        "image": "asset/img/image10.png",
+        "title": "l'assasins sans noms",
+        "description": "L'Assassin sans Nom est une légende d’Eldoria, un spectre insaisissable dont nul n’a jamais survécu pour décrire. Sa présence est trahie par une envoûtante odeur de lavande, seul indice de son passage. À chaque apparition, son apparence – visage, corps et même sexe – change, brouillant ainsi les rares témoignages qui auraient pu trahir son identité. nul n'a le temps de lui échapper une fois sa décision prise de tué."
+    },
+    {
+        "name": "aeliris",
+        "image": "asset/img/image11.png",
+        "title": "aeliris",
+        "description": "Les Aeliris sont une race élégante et fragile, ressemblant aux humains, mais dotés d'une paire d’ailes de verre cristallin qui jaillissent du bas de leur dos. Chaque plume translucide est finement articulée et capable de bouger indépendamment, capturant la lumière ambiante pour créer des reflets chatoyants et des éclats de couleur. Ce don naturel les lie à la lumière, et leur société valorise l’harmonie et la beauté. Les Aeliris peuvent voler, mais uniquement sur de courtes distances, car leurs ailes fragiles les fatiguent rapidement. En combat, ils préfèrent la magie de lumière et d'illusion, utilisant leurs ailes pour éblouir ou distraire, plutôt que d’engager des affrontements physiques."
+    },
+    {
+        "name": "elvaris",
+        "image": "asset/img/image12.png",
+        "title": "elvaris",
+        "description": "Vivant en harmonie avec la nature, les Elvaris sont des maîtres dans l’art de l’archerie et de la magie élémentaire. Leur longévité et leur grâce les rendent à la fois sages et mystérieux."
+    },
+    {
+        "name": "nains de fer",
+        "image": "asset/img/image13.png",
+        "title": "nains de fer",
+        "description": "Solides et robustes, les Nains de Fer habitent dans les montagnes d’Eldoria, excellant dans la forge et la création d’artefacts enchantés. Ils sont de redoutables guerriers, réputés pour leur endurance et leur tenacité."
+    },
+    {
+        "name": "silvins",
+        "image": "asset/img/image14.png",
+        "title": "silvins",
+        "description": "Petits êtres forestiers, les Sylvins possèdent une affinité avec la flore et sont capables de communiquer avec les plantes. Leur nature pacifique les rend discrets et intelligents, utilisant leur ruse pour éviter les conflits."
+    },
+    {
+        "name": "ondin",
+        "image": "asset/img/image15.png",
+        "title": "ondin",
+        "description": "Créatures aquatiques aux cheveux comme des algues et une peau irisée, les Ondins vivent dans les rivières et lacs d’Eldoria. Ils manipulent l’eau à volonté et se montrent souvent méfiants envers ceux qui envahissent leur territoire."
+    },
+    {
+        "name": "golhiat",
+        "image": "asset/img/image16.png",
+        "title": "golhiat",
+        "description": "Géants aux muscles impressionnants et à la peau marbrée, les Goliaths préfèrent les montagnes escarpées et les combats honorables. Ils possèdent une force phénoménale mais leur stature massive en fait des cibles faciles pour la magie."
+    },
+    {
+        "name": "éthérin",
+        "image": "asset/img/image17.png",
+        "title": "éthérin",
+        "description": "Humanoïdes aux yeux brillants et à l’aura étrange, les Éthérins semblent liés au monde des esprits. Doués en divination et en magie de l’illusion, ils perçoivent souvent des réalités invisibles aux autres races."
+    },
+    {
+        "name": "halelin",
+        "image": "asset/img/image18.png",
+        "title": "halelin",
+        "description": "D’une taille menue, les Halelins possèdent un esprit vif et une chance presque surnaturelle. Aventuriers dans l’âme, ils sont souvent nomades, excellant en discrétion et en marchandage."
+    },
+    {
+        "name": "Taurëans",
+        "image": "asset/img/image19.png",
+        "title": "Taurëans",
+        "description": "Semi-humains et semi-animaux, les Taurëans arborent des traits de diverses bêtes sauvages, comme des oreilles pointues ou une queue de renard. Ils sont agiles et fins chasseurs, en parfaite communion avec leur environnement naturel. leur apparence varis enormement entre les differente tribut."
+    },
+    {
+        "name": "Orgs de Jade",
+        "image": "asset/img/image20.png",
+        "title": "Orgs de Jade",
+        "description": "Peau verte et force brute, les Orgs de Jade sont une race fière vivant dans les terres sauvages. Connus pour leur code d’honneur strict, ils respectent la force et la bravoure, même chez leurs adversaires."
+    },
+    {
+        "name": "Griffon",
+        "image": "asset/img/image21.png",
+        "title": "Griffon",
+        "description": "Mi-aigle, mi-lion, le griffon est un prédateur majestueux des montagnes, connu pour sa vitesse et sa force redoutables. Il est souvent convoité pour ses plumes dorées, utilisées dans les rituels sacrés."
+    },
+    {
+        "name": "Drake des Marais",
+        "image": "asset/img/image22.png",
+        "title": "Drake des Marais",
+        "description": "Dragon terrestre de petite taille, le drake des marais vit dans les régions humides et secrète un venin corrosif. Son cuir épais et ses écailles brunes le rendent quasiment invisible dans les eaux boueuses."
+    },
+    {
+        "name": "Araignée d'Ombrenuit",
+        "image": "asset/img/image23.png",
+        "title": "Araignée d'Ombrenuit",
+        "description": "Habitante des cavernes sombres, cette araignée géante possède des yeux luisants et des pattes hérissées. Ses toiles, d’une solidité remarquable, capturent aussi bien ses proies que la lumière."
+    },
+    {
+        "name": "Troll de Pierre",
+        "image": "asset/img/image24.png",
+        "title": "Troll de Pierre",
+        "description": "Massif et rustique, le troll de pierre se camoufle facilement parmi les rochers. Sa peau granuleuse le rend difficile à blesser, mais il redoute la lumière du jour, qui le pétrifie."
+    },
+    {
+        "name": "Wyverne des Cieux",
+        "image": "asset/img/image25.png",
+        "title": "Wyverne des Cieux",
+        "description": "Cousine lointaine des dragons, cette créature ailée possède une queue barbelée et vole avec une agilité surprenante. On la trouve dans les hautes falaises et elle chasse en plongeant sur ses proies."
+    },
+    {
+        "name": "Spectre des Brumes",
+        "image": "asset/img/image26.png",
+        "title": "Spectre des Brumes",
+        "description": "Apparition éthérée aux yeux luisants, le spectre erre dans les ruines ou les cimetières, guidé par une énergie sombre. Son toucher glace le sang, et il peut disparaître dans la brume en un instant."
+    },
+    {
+        "name": "Licorne d'Argent",
+        "image": "asset/img/image27.png",
+        "title": "Licorne d'Argent",
+        "description": "Créature pure et mystique, la licorne d’argent parcourt les forêts sacrées et n’apparaît qu’aux âmes bienveillantes. Son pelage blanc nacré et sa corne brillante sont symboles de guérison."
+    },
+    {
+        "name": "Salamandre de Feu",
+        "image": "asset/img/image28.png",
+        "title": "Salamandre de Feu",
+        "description": "Lézard flamboyant, la salamandre de feu résiste aux flammes et y puise sa force vitale. Elle est souvent aperçue dans les volcans et les forges, et sa chaleur intense dissuade les prédateurs."
+    },
+    {
+        "name": "Roc du Tonnerre",
+        "image": "asset/img/image29.png",
+        "title": "Roc du Tonnerre",
+        "description": "Oiseau géant capable de créer des tempêtes en battant des ailes, le roc du tonnerre niche dans les pics des montagnes. Ses plumes se chargent d’électricité, rendant ses attaques mortelles."
+    },
+    {
+        "name": "Wyrm des Sables",
+        "image": "asset/img/image30.png",
+        "title": "Wyrm des Sables",
+        "description": "Serpent géant des déserts, le wyrm des sables se déplace sous la surface pour surprendre ses proies. Sa mâchoire puissante et ses écailles abrasives en font une menace pour les voyageurs."
+    },
+    {
+        "name": "Golem de Fer",
+        "image": "asset/img/image31.png",
+        "title": "Golem de Fer",
+        "description": "Création d’anciens forgerons, le golem de fer est une machine vivante animée par magie, utilisée pour protéger les trésors anciens. Sa carapace métallique résiste aux armes ordinaires."
+    },
+    {
+        "name": "Élémentaire de Glace",
+        "image": "asset/img/image32.png",
+        "title": "Élémentaire de Glace",
+        "description": "Esprit cristallin, l'élémentaire de glace prend forme dans les régions enneigées et attaque les intrus avec des éclats glacés. Il peut se fondre dans la neige pour échapper au danger."
+    },
+    {
+        "name": "Mandragore Sauvage",
+        "image": "asset/img/image33.png",
+        "title": "Mandragore Sauvage",
+        "description": "Plante carnivore, la mandragore sauvage possède des racines qui forment une créature hurlante. On dit que ses cris pétrifient ceux qui la dérangent."
+    },
+    {
+        "name": "Basilic",
+        "image": "asset/img/image34.png",
+        "title": "Basilic",
+        "description": "Lézard venimeux au regard mortel, le basilic habite les cavernes et ruines. Ses yeux peuvent pétrifier quiconque le fixe, rendant son antre redouté des aventuriers."
+    },
+    {
+        "name": "Harpie des Vents",
+        "image": "asset/img/image35.png",
+        "title": "Harpie des Vents",
+        "description": "La harpie des vents est connue pour ses chants ensorcelants qui attirent les voyageurs dans des pièges. Elle attaque ensuite avec des serres acérées et une férocité redoutable."
+    },
+    {
+        "name": "Cervalune",
+        "image": "asset/img/image36.png",
+        "title": "Cervalune",
+        "description": "Cerf majestueux aux bois argentés, le cervalune est un symbole de paix et de prospérité pour de nombreuses cultures. Ses bois scintillent sous la lune, et on dit que sa présence bénit les terres."
+    },
+    {
+        "name": "Corbeau Murmure",
+        "image": "asset/img/image37.png",
+        "title": "Corbeau Murmure",
+        "description": "Oiseau sombre et mystérieux, le corbeau murmure est souvent associé aux augures et aux présages. Il est parfois apprivoisé par les mages, qui lui confient des messages qu’il délivre sur des distances étonnantes."
+    },
+    {
+        "name": "Chien de Givre",
+        "image": "asset/img/image38.png",
+        "title": "Chien de Givre",
+        "description": "Ce grand canidé des montagnes est résistant au froid et sert souvent de compagnon aux explorateurs. Sa fourrure épaisse et ses instincts de chasse en font un protecteur idéal dans les contrées enneigées."
+    },
+    {
+        "name": "Lièvre Mirage",
+        "image": "asset/img/image39.png",
+        "title": "Lièvre Mirage",
+        "description": "Ce lièvre aux teintes changeantes vit dans les plaines et a la capacité de se camoufler pour échapper aux prédateurs. Les chasseurs estiment qu’attraper un lièvre mirage porte chance pour la saison à venir."
+    },
+    {
+        "name": "Faucon Dard",
+        "image": "asset/img/image40.png",
+        "title": "Faucon Dard",
+        "description": "Rapide et précis, ce faucon est utilisé par les éclaireurs pour surveiller de vastes étendues. Sa vision perçante et sa vitesse en font un chasseur redoutable pour les petites proies."
+    },
+    {
+        "name": "Renard Flambeau",
+        "image": "asset/img/image41.png",
+        "title": "Renard Flambeau",
+        "description": "Petit animal nocturne au pelage flamboyant, le renard flambeau brille faiblement dans l'obscurité. On raconte que le suivre peut mener à des trésors ou à des endroits secrets."
+    },
+    {
+        "name": "Ours Ombrebois",
+        "image": "asset/img/image42.png",
+        "title": "Ours Ombrebois",
+        "description": "Massif et résistant, cet ours brun est un solitaire des forêts épaisses. Respecté par les habitants, il est aussi un symbole de protection et de force pour les druides et les forestiers."
+    },
+    {
+        "name": "Hérisson de Cristal",
+        "image": "asset/img/image43.png",
+        "title": "Hérisson de Cristal",
+        "description": "Petit rongeur aux épines translucides, ce hérisson émet des lueurs douces et est souvent utilisé pour éclairer les jardins sacrés. Ses épines sont recherchées pour créer des amulettes de protection."
+    },
+    {
+        "name": "Crapaud Perle",
+        "image": "asset/img/image44.png",
+        "title": "Crapaud Perle",
+        "description": "Amphibien à la peau nacrée, le crapaud perle vit près des rivières et est prisé pour ses sécrétions utilisées en médecine. Sa présence est souvent signe d’eaux pures et non polluées."
+    },
+    {
+        "name": "Rat de Soufre",
+        "image": "asset/img/image45.png",
+        "title": "Rat de Soufre",
+        "description": "Petit rongeur vivant près des volcans, il a une fourrure qui absorbe les particules de soufre, le rendant résistant aux gaz toxiques. Il est souvent un signe précurseur d’activité volcanique."
+    },
+    {
+        "name": "Serpent de Poussière",
+        "image": "asset/img/image46.png",
+        "title": "Serpent de Poussière",
+        "description": "Long serpent aux écailles sableuses, il se cache dans les déserts et est capable de se fondre dans le sol. On dit que capturer un serpent de poussière offre une protection contre les tempêtes de sable."
+    },
+    {
+        "name": "Loutre des Torrents",
+        "image": "asset/img/image47.png",
+        "title": "Loutre des Torrents",
+        "description": "Agiles et sociables, ces loutres vivent dans les rapides et apportent de la chance aux pêcheurs. Leur capacité à manipuler des objets de leurs pattes les rend fascinantes, et elles sont parfois domestiquées pour aider à pêcher."
+    }
+]
+    

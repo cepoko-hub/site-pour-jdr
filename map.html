@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: #ffdd44;
+            margin: 0;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            height: 24px;
+            margin-right: 25px;
+            justify-content: space-between;
+        }
+        .menu-icon div {
+            background-color: #ffdd44;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+            color: #ffdd44;
+        }
+        .nav-links.active {
+            transform: translateX(0);
+        }
+        .content {
+            margin-top: 80px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+        .map-container {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .map {
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+        .marker {
+            position: absolute;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.3s ease;
+        }
+        .zoom-controls {
+            margin-top: 10px;
+        }
+        .zoom-controls button {
+            padding: 8px 12px;
+            font-size: 1em;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .arrow-controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .arrow-controls button {
+            padding: 8px 12px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Carte Interactive</h1>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="nav-links" id="navLinks">
+    <a href="darren.html">fiche de lukas</a>
+    <a href="gayten.html">fiche de gaiten</a>
+    <a href="lancée-de-dée.html">les dée du destin</a>
+    <a href="page-de-resherche.html">recherche</a>
+    <a href="note.html">mes note</a>
+    <a href="page-inventaire.html">inventaire</a>
+</div>
+
+<div class="content">
+    <div class="map-container">
+        <img src="asset/img/image3.png" alt="Carte" id="map" class="map">
+        <span class="marker" id="marker1" style="top: 50px; left: 50px;">🔴</span>
+        <span class="marker" id="marker2" style="top: 100px; left: 100px;">🔵</span>
+        <span class="marker" id="marker3" style="top: 150px; left: 150px;">🟢</span>
+        <span class="marker" id="marker4" style="top: 200px; left: 200px;">🟠</span>
+        <span class="marker" id="marker5" style="top: 250px; left: 250px;">🟣</span>
+    </div>
+    <div class="zoom-controls">
+        <button onclick="zoomMap(1.2)">Agrandir</button>
+        <button onclick="zoomMap(0.8)">Rétrécir</button>
+        <button onclick="resetMarkers()">🔄 Réinitialiser les Pions</button>
+    </div>
+</div>
+
+<div class="arrow-controls">
+    <button onclick="moveMap(0, -20)">⬇️</button>
+    <button onclick="moveMap(-20, 0)">➡️</button>
+    <button onclick="moveMap(20, 0)">⬅️</button>
+    <button onclick="moveMap(0, 20)">⬆️</button>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    const markers = document.querySelectorAll('.marker');
+    let selectedMarker = null;
+    let mapScale = 1;
+
+    markers.forEach(marker => {
+        const savedPosition = JSON.parse(localStorage.getItem(marker.id));
+        if (savedPosition) {
+            marker.style.top = savedPosition.top;
+            marker.style.left = savedPosition.left;
+        }
+
+        marker.addEventListener('mousedown', () => {
+            selectedMarker = selectedMarker === marker ? null : marker;
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            if (selectedMarker) {
+                const mapRect = document.getElementById('map').getBoundingClientRect();
+                const x = event.clientX - mapRect.left;
+                const y = event.clientY - mapRect.top;
+                selectedMarker.style.left = `${x}px`;
+                selectedMarker.style.top = `${y}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (selectedMarker) {
+                localStorage.setItem(selectedMarker.id, JSON.stringify({
+                    top: selectedMarker.style.top,
+                    left: selectedMarker.style.left
+                }));
+                selectedMarker = null;
+            }
+        });
+    });
+
+    function zoomMap(factor) {
+        mapScale *= factor;
+        document.getElementById('map').style.transform = `scale(${mapScale})`;
+    }
+
+    let mapOffsetX = 0;
+    let mapOffsetY = 0;
+
+    function moveMap(x, y) {
+        mapOffsetX += x;
+        mapOffsetY += y;
+        const map = document.getElementById('map');
+        map.style.transform = `scale(${mapScale}) translate(${mapOffsetX}px, ${mapOffsetY}px)`;
+    }
+
+    function resetMarkers() {
+        markers.forEach(marker => {
+            marker.style.top = '0px';
+            marker.style.left = '0px';
+            localStorage.removeItem(marker.id);
+        });
+    }
+</script>
+
+</body>
+</html>

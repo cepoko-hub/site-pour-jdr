@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventaire RPG</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: #ffdd44;
+            margin: 0;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            height: 24px;
+            margin-right: 25px;
+            justify-content: space-between;
+        }
+        .menu-icon div {
+            background-color: #ffdd44;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+            color: #ffdd44;
+        }
+        .nav-links.active {
+            transform: translateX(0);
+        }
+        .content {
+            margin-top: 80px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .category {
+            margin: 20px 0;
+            padding: 30px;
+            border: 1px solid #ffdd44;
+            border-radius: 5px;
+        }
+        .category h2 {
+            margin: 0;
+        }
+        .item-form input, .item-form textarea {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+        }
+        .item-form button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .item-list {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .item {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item button {
+            background: none;
+            border: none;
+            color: #ffdd44;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Inventaire RPG</h1>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="nav-links" id="navLinks">
+    <a href="darren.html">fiche de lukas</a>
+    <a href="gayten.html">fiche de gaiten</a>
+    <a href="lancée-de-dée.html">les dée du destin</a>
+    <a href="page-de-resherche.html">recherche</a>
+    <a href="map.html">carte interactive</a>
+    <a href="note.html">mes note</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="#argent-stock">mon argent</a>
+    <a href="#équipement-stock">mes équipement</a>
+    <a href="#sac-stock">mon sac</a>
+</div>
+
+<div class="content">
+    <div class="category" id="argent-stock">
+        <h2>💰 Stockage d'Argent</h2>
+        <div class="item">
+            <span>Pièces d'Or..........</span>
+            <input type="number" id="gold" value="0">
+            <button onclick="saveMoney()">Modifier</button>
+        </div>
+        <div class="item">
+            <span>Pièces d'Argent....</span>
+            <input type="number" id="silver" value="0">
+            <button onclick="saveMoney()">Modifier</button>
+        </div>
+        <div class="item">
+            <span>Pièces de Bronze.</span>
+            <input type="number" id="bronze" value="0">
+            <button onclick="saveMoney()">Modifier</button>
+        </div>
+    </div>
+    
+    <div class="category" id="équipement-stock">
+        <h2>⚔️ Équipement</h2>
+        <form class="item-form" onsubmit="addEquipment(); return false;">
+            <input type="text" id="equipmentName" placeholder="Nom de l'équipement" required />
+            <textarea id="equipmentDescription" placeholder="Description" required></textarea>
+            <button type="submit">Ajouter Équipement</button>
+        </form>
+        <div id="equipmentList" class="item-list"></div>
+    </div>
+    
+    <div class="category" id="sac-stock">
+        <h2>🎒 Sac</h2>
+        <form class="item-form" onsubmit="addItemToBag(); return false;">
+            <input type="text" id="bagItemName" placeholder="Nom de l'objet" required />
+            <textarea id="bagItemDescription" placeholder="Description" required></textarea>
+            <button type="submit">Ajouter Objet</button>
+        </form>
+        <div id="bagList" class="item-list"></div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    const storageKeyMoney = 'money';
+    const storageKeyEquipment = 'equipment';
+    const storageKeyBag = 'bag';
+
+    function saveMoney() {
+        const gold = document.getElementById('gold').value || 0;
+        const silver = document.getElementById('silver').value || 0;
+        const bronze = document.getElementById('bronze').value || 0;
+        const money = { gold, silver, bronze };
+        localStorage.setItem(storageKeyMoney, JSON.stringify(money));
+        alert('Argent sauvegardé !');
+    }
+
+    function loadMoney() {
+        const money = JSON.parse(localStorage.getItem(storageKeyMoney)) || { gold: 0, silver: 0, bronze: 0 };
+        document.getElementById('gold').value = money.gold;
+        document.getElementById('silver').value = money.silver;
+        document.getElementById('bronze').value = money.bronze;
+    }
+
+    function addEquipment() {
+        const name = document.getElementById('equipmentName').value;
+        const description = document.getElementById('equipmentDescription').value;
+        const equipmentList = JSON.parse(localStorage.getItem(storageKeyEquipment)) || [];
+        equipmentList.push({ name, description });
+        localStorage.setItem(storageKeyEquipment, JSON.stringify(equipmentList));
+        displayEquipment();
+        document.getElementById('equipmentName').value = '';
+        document.getElementById('equipmentDescription').value = '';
+    }
+
+    function displayEquipment() {
+        const equipmentList = JSON.parse(localStorage.getItem(storageKeyEquipment)) || [];
+        const equipmentContainer = document.getElementById('equipmentList');
+        equipmentContainer.innerHTML = '';
+        equipmentList.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'item';
+            itemDiv.innerHTML = `
+                <div>
+                    <strong>${item.name}</strong>
+                    <p>${item.description}</p>
+                </div>
+                <div>
+                    <button onclick="editEquipment(${index})">✏️</button>
+                    <button onclick="deleteEquipment(${index})">🗑️</button>
+                </div>
+            `;
+            equipmentContainer.appendChild(itemDiv);
+        });
+    }
+
+    function editEquipment(index) {
+        const equipmentList = JSON.parse(localStorage.getItem(storageKeyEquipment));
+        const item = equipmentList[index];
+        const newName = prompt("Modifier le nom", item.name);
+        const newDescription = prompt("Modifier la description", item.description);
+        if (newName !== null && newDescription !== null) {
+            equipmentList[index] = { name: newName, description: newDescription };
+            localStorage.setItem(storageKeyEquipment, JSON.stringify(equipmentList));
+            displayEquipment();
+        }
+    }
+
+    function deleteEquipment(index) {
+        const equipmentList = JSON.parse(localStorage.getItem(storageKeyEquipment));
+        equipmentList.splice(index, 1);
+        localStorage.setItem(storageKeyEquipment, JSON.stringify(equipmentList));
+        displayEquipment();
+    }
+
+    function addItemToBag() {
+        const name = document.getElementById('bagItemName').value;
+        const description = document.getElementById('bagItemDescription').value;
+        const bagList = JSON.parse(localStorage.getItem(storageKeyBag)) || [];
+        bagList.push({ name, description });
+        localStorage.setItem(storageKeyBag, JSON.stringify(bagList));
+        displayBag();
+        document.getElementById('bagItemName').value = '';
+        document.getElementById('bagItemDescription').value = '';
+    }
+
+    function displayBag() {
+        const bagList = JSON.parse(localStorage.getItem(storageKeyBag)) || [];
+        const bagContainer = document.getElementById('bagList');
+        bagContainer.innerHTML = '';
+        bagList.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'item';
+            itemDiv.innerHTML = `
+                <div>
+                    <strong>${item.name}</strong>
+                    <p>${item.description}</p>
+                </div>
+                <div>
+                    <button onclick="editBagItem(${index})">✏️</button>
+                    <button onclick="deleteBagItem(${index})">🗑️</button>
+                </div>
+            `;
+            bagContainer.appendChild(itemDiv);
+        });
+    }
+
+    function editBagItem(index) {
+        const bagList = JSON.parse(localStorage.getItem(storageKeyBag));
+        const item = bagList[index];
+        const newName = prompt("Modifier le nom", item.name);
+        const newDescription = prompt("Modifier la description", item.description);
+        if (newName !== null && newDescription !== null) {
+            bagList[index] = { name: newName, description: newDescription };
+            localStorage.setItem(storageKeyBag, JSON.stringify(bagList));
+            displayBag();
+        }
+    }
+
+    function deleteBagItem(index) {
+        const bagList = JSON.parse(localStorage.getItem(storageKeyBag));
+        bagList.splice(index, 1);
+        localStorage.setItem(storageKeyBag, JSON.stringify(bagList));
+        displayBag();
+    }
+
+    window.onload = function() {
+        loadMoney();
+        displayEquipment();
+        displayBag();
+    };
+</script>
+
+</body>
+</html>

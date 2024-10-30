@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche de Personnage</title>
+    <style>
+        /* Style général et responsive */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: #ffdd44;
+            margin: 0;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            height: 24px;
+            height: 24px;
+            margin-right: 20px;
+            justify-content: space-between;
+        }
+        .menu-icon div {
+            background-color: #ffdd44;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+            color: #ffdd44;
+        }
+        .nav-links.active {
+            transform: translateX(0);
+        }
+
+        .character-sheet {
+            width: 90%;
+            max-width: 500px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 10px 0;
+            color: #ff4500;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        .character-image img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            margin-top: 50px;
+            transition: transform 0.3s ease; 
+        }
+
+        .character-image img:hover {
+            transform: scale(1.5); 
+        }
+
+
+        .stat, .spell {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 1s ease-out;
+        }
+
+        .stat-bar {
+            width: 100px;
+            height: 10px;
+            background-color: #555;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+
+        .stat-bar-inner {
+            height: 100%;
+            background-color: #ff4500;
+            transition: width 0.5s;
+        }
+
+        .spell-description {
+            color: #b0b0b0;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            from { color: #ff4500; }
+            to { color: #ff6347; }
+        }
+
+        @media (max-width: 600px) {
+            .character-sheet {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <h1>Menu</h1>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="darren.html">fiche de lukas</a>
+            <a href="lancée-de-dée.html">les dée du destin</a>
+            <a href="page-de-resherche.html">recherche</a>
+            <a href="map.html">carte interactive</a>
+            <a href="note.html">mes note</a>
+            <a href="page-inventaire.html">inventaire</a>
+        </div>
+    </header>
+
+    <div class="character-sheet">
+        <!-- Image du personnage -->
+        <div class="character-image">
+            <img src="asset/Screenshot_2024-10-27-06-17-36-251_jp.ne.ibis.ibispaintx.app-edit.jpg" alt="Squelette Nécromancien">
+        </div>
+
+        <h2>Squelette Nécromancien</h2>
+
+        <!-- Statistiques -->
+        <div class="stat"><span>Force</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 20%;"></div></div><span>20</span></div>
+        <div class="stat"><span>Agilité</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 40%;"></div></div><span>40</span></div>
+        <div class="stat"><span>Savoir</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 80%;"></div></div><span>80</span></div>
+        <div class="stat"><span>Perception</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 55%;"></div></div><span>55</span></div>
+        <div class="stat"><span>Dextérité</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 55%;"></div></div><span>55</span></div>
+        <div class="stat"><span>Éloquence</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 20%;"></div></div><span>20</span></div>
+        <div class="stat"><span>Mana</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 100%;"></div></div><span>400</span></div>
+        <div class="stat"><span>Robustesse</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 60%;"></div></div><span>60</span></div>
+        <div class="stat"><span>Chance</span> <div class="stat-bar"><div class="stat-bar-inner" style="width: 45%;"></div></div><span>45</span></div>
+
+        <!-- Sorts -->
+        <h3>Sorts</h3>
+        <div class="spell">
+            <div>
+                <strong>Ombre Levante</strong>
+                <div class="spell-description">Lève des squelettes enterrés à proximité pour former une armée loyale. les squelettes peuvent etre des betes ou des humanoïds.</div>
+            </div>
+        </div>
+        <div class="spell">
+            <div>
+                <strong>C'est l'heure de l'excavations</strong>
+                <div class="spell-description">Creuse un trou, soit avec une pelle soit avec sont bras en le detachant pour creusé, peut détéré des ossement d'animeaux ou de creature humanoide ou encore des objet.</div>
+            </div>
+        </div>
+        <div class="spell">
+            <div>
+                <strong>Voile de la Nuit</strong>
+                <div class="spell-description">Crée un brouillard épais et obscur qui diminue la vision des ennemis et renforce l'utilisateur.</div>
+            </div>
+        </div>
+        <div class="spell">
+            <div>
+                <strong>Orbe Sombre</strong>
+                <div class="spell-description">Envoie une sphère d'énergie obscure qui transperce les ennemis.</div>
+            </div>
+        </div>
+        <div class="spell">
+            <div>
+                <strong>Lance de ténébreuse</strong>
+                <div class="spell-description">Projette une lance d'ombre capable de percer les défenses les plus solides.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

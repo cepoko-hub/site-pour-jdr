@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: #ffdd44;
+            margin: 0;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            height: 24px;
+            margin-right: 25px;
+            justify-content: space-between;
+        }
+        .menu-icon div {
+            background-color: #ffdd44;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+            color: #ffdd44;
+        }
+        .nav-links.active {
+            transform: translateX(0);
+        }
+        .content {
+            margin-top: 80px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .search-bar {
+            margin: 20px 0;
+            width: 100%;
+        }
+        .result-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .result-item {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .result-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+        .result-item img:hover {
+            transform: scale(3);
+        }
+        .result-item h3 {
+            color: #ffdd44;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .result-item p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Recherche</h1>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="nav-links" id="navLinks">
+    <a href="darren.html">fiche de lukas</a>
+    <a href="gayten.html">fiche de gaiten</a>
+    <a href="lancée-de-dée.html">les dée du destin</a>
+    <a href="map.html">carte interactive</a>
+    <a href="note.html">mes note</a>
+    <a href="page-inventaire.html">inventaire</a>
+</div>
+
+<div class="content">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Rechercher..." oninput="searchContent()" />
+    <div id="resultContainer" class="result-container"></div>
+</div>
+
+<script>
+    function toggleMenu() { 
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    let data = [];
+
+    fetch('data.json')
+        .then(response => response.json())
+        .then(jsonData => data = jsonData);
+
+    function searchContent() {
+        const query = document.getElementById('searchBar').value.toLowerCase();
+        const resultContainer = document.getElementById('resultContainer');
+        resultContainer.innerHTML = '';
+
+        const filteredData = data.filter(item => item.name.toLowerCase().includes(query)).slice(0, 3);
+
+        filteredData.forEach(item => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item';
+            resultItem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+            `;
+            resultContainer.appendChild(resultItem);
+        });
+    }
+</script>
+
+</body>
+</html>
