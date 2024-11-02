@@ -280,6 +280,54 @@
         "image": "asset/img/image47.png",
         "title": "Loutre des Torrents",
         "description": "Agiles et sociables, ces loutres vivent dans les rapides et apportent de la chance aux pêcheurs. Leur capacité à manipuler des objets de leurs pattes les rend fascinantes, et elles sont parfois domestiquées pour aider à pêcher."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance: révérence de l'aube et du crépuscule",
+        "image": "asset/img/image48.png",
+        "title": "dogme de l'église de la sainte radiance: révérence de l'aube et du crépuscule",
+        "description": "Deux fois par jour, les fidéles se tournent vers le soleil pour prier, au lever et au coucher, symbolisant le cycle perpétuel de la lumiére triomphant des ténèbres."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance: Le Sacré à travers la Pénitence",
+        "image": "asset/img/image49.png",
+        "title": "dogme de l'église de la sainte radiance: Le Sacré à travers la Pénitence",
+        "description": "Pour se purifier, les fidèles peuvent être appelés à des actes de pénitence physique, comme le jeûne ou la marche sous le soleil,afin de rappeler que la souffrance mène au salut."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance: Foi sans Compromis",
+        "image": "asset/img/image50.png",
+        "title": "dogme de l'église de la sainte radiance: Foi sans Compromis",
+        "description": "Aucun fidèle ne doit laisser ses croyances être affaiblies ou altérées par des influences extérieures, et doit rejeter toute influence contraire à la Radiance."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance: Union de la Fraternité",
+        "image": "asset/img/image51.png",
+        "title": "dogme de l'église de la sainte radiance: Union de la Fraternité",
+        "description": "Tous les membres de l'église sont frères et sœurs dans la lumière. L'égoïsme et la trahison entre fidèles sont perçus comme des crimes graves, nécessitant une purification immédiate."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance: Protection de la Lumière Pure",
+        "image": "asset/img/image52.png",
+        "title": "dogme de l'église de la sainte radiance: Protection de la Lumière Pure",
+        "description": "Toute pratique de magie non approuvée par l'Église est strictement interdite. Toute magie corrompue ou sans fondement dans la Radiance doit être éradiquée."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance: Protection de la Lignée des Justes",
+        "image": "asset/img/image53.png",
+        "title": "dogme de l'église de la sainte radiance: Protection de la Lignée des Justes",
+        "description": "Les enfants des fidèles, considérés comme purs, doivent être élevés loin des créatures surnaturelles et de la magie pour conserver leur lien sacré avec la lumière."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance: Ordre de la Pure Connaissance",
+        "image": "asset/img/image54.png",
+        "title": "dogme de l'église de la sainte radiance: Ordre de la Pure Connaissance",
+        "description": "Les hauts rangs de l’Église peuvent accéder aux manuscrits interdits pour comprendre les failles des créatures magiques. Ils doivent cependant purifier leur esprit après chaque lecture pour éviter d’être corrompus par le contenu."
+    },
+    {
+        "name": "dogme de l'église de la sainte radiance:Le Rite de la Main Brûlante",
+        "image": "asset/img/image55.png",
+        "title": "dogme de l'église de la sainte radiance: Le Rite de la Main Brûlante",
+        "description": "Lorsqu'un inquisiteur monte en grade, il subit une cérémonie où sa main est exposée à la flamme sacrée. Ce rituel renforce symboliquement sa résistance face aux ténèbres et à la corruption, le marquant pour la vie."
     }
 ]
     
